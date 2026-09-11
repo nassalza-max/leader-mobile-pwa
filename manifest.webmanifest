@@ -1,0 +1,14 @@
+{
+  "name": "LEADER Executive Agent",
+  "short_name": "LEADER",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

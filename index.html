@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg">
+<title>LEADER</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div class="brand">LEADER</div>
+  <div class="tag">Executive Agent</div>
+  <section class="card">
+    <h2>القائد جاهز</h2>
+    <p id="status">جارٍ فحص الاتصال...</p>
+    <button id="console">فتح LEADER Console</button>
+  </section>
+  <section class="card">
+    <h3>Bridge Ready</h3>
+    <p>واجهة الهاتف جاهزة لتكون نقطة دخول إلى LEADER، مع إبقاء التنفيذ الخارجي خلف الحوكمة والموافقة والتدقيق.</p>
+  </section>
+</main>
+<script>
+const base='https://leader-v0-2.onrender.com';
+const statusEl=document.getElementById('status');
+fetch(base+'/health',{mode:'cors',cache:'no-store'}).then(r=>{
+  statusEl.textContent=r.ok?'● LEADER متصل':'● LEADER استجاب لكن يحتاج تحقق';
+}).catch(()=>statusEl.textContent='○ تعذر الاتصال حاليًا');
+document.getElementById('console').onclick=()=>location.href=base+'/#/dashboard';
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>

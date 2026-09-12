@@ -24,7 +24,7 @@
   </section>
 </main>
 <script>
-const base='https://leader-v0-2.onrender.com';
+const base='https://leader-v03-deployment-candidate.onrender.com';
 const statusEl=document.getElementById('status');
 fetch(base+'/health',{mode:'cors',cache:'no-store'}).then(r=>{
   statusEl.textContent=r.ok?'● LEADER متصل':'● LEADER استجاب لكن يحتاج تحقق';
